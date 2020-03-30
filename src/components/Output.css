@@ -1,0 +1,8 @@
+.output {
+    display: flex;
+    height: 30em;
+    flex: 1;
+    margin-left: 5px;
+    background-color: rgb(243, 243, 243);
+    justify-content: center;
+}

@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Button from './components/Button'
+import Output from './components/Output'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      output: "",
+    };
+  }
+
+  addPercentage = val => {
+    console.log(val);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="Button-wrapper">
+          <div className="row">
+            <Button id="10" handleClick={this.addPercentage}>10%</Button>
+            <Button id="20" handleClick={this.addPercentage}>20%</Button>
+            <Button id="30" handleClick={this.addPercentage}>30%</Button>
+            <Button id="40" handleClick={this.addPercentage}>40%</Button>
+            <Button id="50" handleClick={this.addPercentage}>50%</Button>
+          </div>
+          <div className="row">
+            <Button id="60" handleClick={this.addPercentage}>60%</Button>
+            <Button id="70" handleClick={this.addPercentage}>70%</Button>
+            <Button id="80" handleClick={this.addPercentage}>80%</Button>
+            <Button id="90" handleClick={this.addPercentage}>90%</Button>
+            <Button id="100" handleClick={this.addPercentage}>100%</Button>
+          </div>
+          <Output>{this.state.output}</Output>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
