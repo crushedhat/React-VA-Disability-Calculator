@@ -1,14 +1,16 @@
-import React, { Componenet, Component } from 'react';
+import React from 'react';
 import './Output.css';
 
-class Output extends Component {
-    render() {
-        return(
-            <div className="output">
-                {this.props.children}
-            </div>
-        );
-    }
-}
+const List = props => (
+  <div className="percentage-container">
+      {
+        props.items.map((item, index) => <div className="percentage" key={index}>
+        <div className="percentage-text">{item}%</div>
+        <button className="exit"><span>X</span></button>
+        </div>)
+      },
+  </div>
+);
 
-export default Output;
+export default List;
+
