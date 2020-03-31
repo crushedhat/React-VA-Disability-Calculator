@@ -6,14 +6,33 @@ import Output from './components/Output'
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      output: "",
-    };
+      arr: []
+    }
   }
 
-  addPercentage = val => {
-    console.log(val);
+  addPercentage = (val) => {
+    //console.log(val);
+    this.setState({
+      arr: [...this.state.arr, val]
+    })
+    console.log(this.state.arr);
+  }
+
+  removePercentage = (elem) => {
+
+  }
+
+  calculatePercentage = (val) =>{
+
+  }
+
+  recalculatePercentage = () => {
+
+  }
+
+  calculateBilateral = () => {
+    
   }
 
   render() {
@@ -34,7 +53,9 @@ class App extends Component {
             <Button id="90" handleClick={this.addPercentage}>90%</Button>
             <Button id="100" handleClick={this.addPercentage}>100%</Button>
           </div>
-          <Output>{this.state.output}</Output>
+          
+          {/* <Output>{this.state.arr}</Output> */}
+          <Output items={this.state.arr}/>
         </div>
       </div>
     );
