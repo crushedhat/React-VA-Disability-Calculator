@@ -19,10 +19,6 @@ class App extends Component {
     console.log(this.state.arr);
   }
 
-  removePercentage = (elem) => {
-
-  }
-
   calculatePercentage = (val) =>{
 
   }
