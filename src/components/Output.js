@@ -1,20 +1,25 @@
-import React from 'react';
-import './Output.css';
+import React, { Component } from 'react';
+import Percent from './Percent';
+import uuid from 'react-uuid';
+/* import './Output.css'; */
 
-const removePercentage = () => {
-  console.log("here");
+class List extends Component {
+  render() {
+    const {items} = this.props
+    return (
+      <ul className="list-group my-5">
+          <h3 className="text-capitalize text-center"></h3>
+            {
+              items.map(item => { 
+                return(
+                    <Percent key={uuid()} title={item.title} />
+                )
+              })
+            }
+      </ul>
+    )
+  }
 }
-
-const List = props => (
-  <div className="percentage-container">
-      {
-        props.items.map((item, index) => <div className="percentage" key={index}>
-        <div className="percentage-text">{item}%</div>
-        <button className="exit" onClick={removePercentage}><span>X</span></button>
-        </div>)
-      },
-  </div>
-);
 
 export default List;
 
